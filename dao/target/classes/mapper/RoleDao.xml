@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nekostudio.dao.RoleDao">
+    <resultMap id="BaseResultMap" type="org.nekostudio.entity.Role">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="display_name" property="displayName" jdbcType="VARCHAR"/>
+        <result column="description" property="description"/>
+        <result column="state" property="state"/>
+        <collection column="id" property="sysMenus"
+                    ofType="org.nekostudio.entity.SysMenu">
+            <result column="smid" property="id"/>
+            <result column="url" property="url"/>
+            <result column="http_method" property="httpMethod"/>
+            <result column="menu_name" property="name"/>
+            <result column="permission" property="permission"/>
+            <result column="permission_code" property="permissionCode"/>
+            <result column="disable" property="disable"/>
+            <result column="top" property="top" />
+            <result column="parent_id" property="parentId"/>
+        </collection>
+    </resultMap>
+    <select id="selectRole" resultType="org.nekostudio.entity.Role">
+        select *
+        from role
+                 left join user_role_mid urm
+                           on role.id = urm.role_id
+        where user_id = #{id}
+    </select>
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT r.id,
+               r.display_name,
+               r.description,
+               r.name,
+               r.state,
+               sm.id     AS smid,
+               sm.url,
+               sm.http_method,
+               sm.`name` AS menu_name,
+               sm.parent_id,
+               sm.disable,
+               sm.top,
+               sm.permission,
+               sm.permission_code
+        FROM role r
+                 LEFT JOIN role_menu_mid rmd ON r.id = rmd.role_id
+                 LEFT JOIN sys_menu sm ON sm.id = rmd.menu_id
+    </select>
+    <select id="findPage" resultMap="BaseResultMap">
+        SELECT r.id,
+               r.display_name,
+               r.description,
+               r.name,
+               r.state,
+               sm.id     AS smid,
+               sm.url,
+               sm.http_method,
+               sm.`name` AS menu_name,
+               sm.parent_id,
+               sm.disable,
+               sm.top,
+               sm.permission,
+               sm.permission_code
+        FROM role r
+                 LEFT JOIN role_menu_mid rmd ON r.id = rmd.role_id
+                 LEFT JOIN sys_menu sm ON sm.id = rmd.menu_id
+    </select>
+    <update id="updateRole">
+        UPDATE role
+        <set>
+            <if test="name!=null">
+                name = #{name}
+            </if>
+            <if test="displayName!=null">
+                display_name = #{displayName}
+            </if>
+            <if test="description!=null">
+                description = #{description}
+            </if>
+        </set>
+        where id = #{role.id}
+    </update>
+</mapper>

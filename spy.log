@@ -1,0 +1,1 @@
+1620275355162|12|statement|connection 0|url jdbc:p6spy:mysql://127.0.0.1/wechatapp|SELECT  id,username,password,avatar,gender,last_login_time,register_time,login_times,salt  FROM app_user     WHERE (username = ?)|SELECT  id,username,password,avatar,gender,last_login_time,register_time,login_times,salt  FROM app_user     WHERE (username = 'neko')

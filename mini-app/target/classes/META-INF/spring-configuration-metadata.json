@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "wx.miniapp",
+      "type": "org.nekostudio.config.WxMaProperties",
+      "sourceType": "org.nekostudio.config.WxMaProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "wx.miniapp.configs",
+      "type": "java.util.List<org.nekostudio.config.WxMaProperties$Config>",
+      "sourceType": "org.nekostudio.config.WxMaProperties"
+    }
+  ],
+  "hints": []
+}
