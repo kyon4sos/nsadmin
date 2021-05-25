@@ -39,5 +39,5 @@ mybatis-plus:
 wx:
   miniapp:
     configs:
-      - appid: wx9053cabca0bd8a40
-        secret: 34ed7d5853c93f2fae72b64e6ff32508
+      - appid:
+        secret:

@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mini-app" />
         <module name="dao" />
         <module name="common" />
         <module name="web" />
-        <module name="entity" />
         <module name="service" />
+        <module name="mini-app" />
+        <module name="wechat-mini" />
+        <module name="entity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +29,7 @@
       <module name="miniapp" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="web" options="-parameters" />
+      <module name="wechat-mini" options="-parameters" />
     </option>
   </component>
 </project>
