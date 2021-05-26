@@ -11,8 +11,6 @@ r
 Bweb/src/main/java/org/nekostudio/controller/SysMenuController.java,7\b\7b0c055d0e142d5a79f870d2ba509474e60e4ddc
 j
 :entity/src/main/java/org/nekostudio/entity/BaseEntity.java,0\3\037e4396488608da8d6d6f63ae1b6c01372f5f53
-o
-?web/src/main/java/org/nekostudio/controller/UserController.java,4\9\4907cd11b7eac53786378e51b9a76ef8cba95533
 i
 9common/src/main/java/org/nekostudio/common/JsonError.java,b\8\b8cb6ea954267d85a746d5f4869663d0140cb141
 j
@@ -29,3 +27,17 @@ p
 @mini-app/src/main/java/org/nekostudio/config/WxMaProperties.java,4\0\40424bb7836c2e012e293f07533695e1cccac68f
 w
 Gmini-app/src/main/java/org/nekostudio/controller/ProductController.java,d\c\dc18525c1e9ef5d00baf631d657c5b5c95a57b71
+v
+Fmini-app/src/main/java/org/nekostudio/controller/WechatController.java,6\9\6981e148c51525824e885a8c14d09042ce3a2a35
+d
+4mini-app/src/main/java/org/nekostudio/WechatApp.java,3\1\31781e00b8e2c156e991b1b0c622afccb4f30bee
+j
+:web/src/main/java/org/nekostudio/es/repository/MyPage.java,c\0\c006630eebcc84e4cbd634c191c69ba56659b7ba
+m
+=web/src/main/java/org/nekostudio/exception/GlobalHandler.java,3\b\3bcae6443c3cb7ea94339b2816e4c3ebf9d04317
+o
+?web/src/main/java/org/nekostudio/controller/UserController.java,4\9\4907cd11b7eac53786378e51b9a76ef8cba95533
+o
+?web/src/main/java/org/nekostudio/controller/HomeController.java,7\c\7cee9f1f7f940eda75e916ec6b360c26b2d88c30
+o
+?web/src/main/java/org/nekostudio/controller/AuthController.java,7\e\7ee6b1da4eafa4ee3a79e28ee912482e93bf7823
