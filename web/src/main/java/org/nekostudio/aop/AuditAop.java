@@ -7,7 +7,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.CodeSignature;
 import org.nekostudio.annotation.Audit;
-import org.nekostudio.entity.AppUser;
 import org.nekostudio.es.repository.Record;
 import org.nekostudio.es.repository.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,13 +42,11 @@ public class AuditAop {
              name = (String) principal;
         }
         Map<String, Object> argObj = getNameAndValue(joinPoint);
-        AppUser appUser = new AppUser();
-        appUser.setNickname("老王");
         Record record = new Record()
                 .setOperation(audit.type())
                 .setUsername(name)
-                .setData(argObj)
-                .setTime(LocalDateTime.now())
+                .setArgData(argObj)
+                .setUpdateTime(LocalDateTime.now())
                 .setDescription(audit.description());
         Record save = recordRepository.save(record);
         return joinPoint.proceed();

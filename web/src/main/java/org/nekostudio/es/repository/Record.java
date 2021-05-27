@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.nekostudio.enums.Operation;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.time.LocalDateTime;
 
@@ -28,10 +25,8 @@ public class Record {
     private Integer relationId;
     private Operation operation;
     private String description;
-    private Object data;
+    private Object argData;
     private String username;
-
-    @Field(type = FieldType.Date,format = DateFormat.epoch_millis)
-    private LocalDateTime time;
+    private LocalDateTime updateTime;
 
 }

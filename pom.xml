@@ -45,6 +45,8 @@
         <spring.test.version>2.4.5</spring.test.version>
         <spring.es.version>4.2.1</spring.es.version>
         <spring.data.es.version>2.5.0</spring.data.es.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger.ui.version>2.9.2</swagger.ui.version>
         <hutool.version>5.6.5</hutool.version>
 
         <configuration.processor.version>2.3.3.RELEASE</configuration.processor.version>
@@ -116,6 +118,17 @@
                 <version>${druid.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.ui.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>p6spy</groupId>
                 <artifactId>p6spy</artifactId>
                 <version>${p6spy.version}</version>
@@ -157,7 +170,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.20</version>
+                <version>${lombok.version}</version>
                 <optional>true</optional>
             </dependency>
             <dependency>
