@@ -1,5 +1,6 @@
 package org.nekostudio.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.nekostudio.common.JsonResult;
 import org.nekostudio.es.repository.MyPage;
 import org.nekostudio.es.repository.Record;
@@ -20,6 +21,7 @@ public class AuditController {
     @Autowired
     private RecordRepository recordRepository;
 
+    @ApiOperation("获取审计记录接口")
     @GetMapping(value = "audits",params = {"page_size","current"})
     public JsonResult getPage(@RequestParam("page_size") int pageSize,@RequestParam("current") int current) {
         PageRequest pageRequest = PageRequest.of(current, pageSize);

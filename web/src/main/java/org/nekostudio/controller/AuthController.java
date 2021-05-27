@@ -1,5 +1,6 @@
 package org.nekostudio.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.nekostudio.common.JsonResult;
 import org.nekostudio.common.JwtUtil;
 import org.nekostudio.dto.LoginInfo;
@@ -30,6 +31,7 @@ public class AuthController {
     @Resource
     private IUserService userService;
 
+    @ApiOperation("用户注册接口")
     @PostMapping("/register")
     public JsonResult register(@RequestBody @Validated LoginInfo loginInfo) {
         String username = loginInfo.getUsername();
@@ -40,6 +42,7 @@ public class AuthController {
         userService.create(appUser);
         return JsonResult.ok(appUser);
     }
+    @ApiOperation("用户登录接口")
     @PostMapping("/login")
     public JsonResult login(@RequestBody LoginInfo info, HttpServletResponse response) {
         String password = info.getPassword();

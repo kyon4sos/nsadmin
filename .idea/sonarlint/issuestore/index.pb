@@ -5,8 +5,6 @@
 mini-app/pom.xml,e\9\e9b5d9aeaa6f6e08874f099fb8bb147788baa6a4
 ;
 dao/pom.xml,3\c\3c381b6bf94ee3f733dacb70529f8db48f65b72e
-r
-Bweb/src/main/java/org/nekostudio/controller/SysMenuController.java,7\b\7b0c055d0e142d5a79f870d2ba509474e60e4ddc
 j
 :entity/src/main/java/org/nekostudio/entity/BaseEntity.java,0\3\037e4396488608da8d6d6f63ae1b6c01372f5f53
 i

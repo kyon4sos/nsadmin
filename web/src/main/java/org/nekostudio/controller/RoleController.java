@@ -2,6 +2,7 @@ package org.nekostudio.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.nekostudio.common.JsonResult;
 import org.nekostudio.dto.RoleDto;
@@ -35,6 +36,7 @@ public class RoleController {
     @Autowired
     private ISysMenuService sysMenuService;
 
+    @ApiOperation("获取角色分页")
     @GetMapping(value = "role", params = {"display_name", "page_size", "current"})
     public JsonResult getByName(@Validated @RequestParam("display_name") String name, @RequestParam("page_size") long size, @RequestParam("current") long current) {
         Page<Role> page = new Page<>(current,size);

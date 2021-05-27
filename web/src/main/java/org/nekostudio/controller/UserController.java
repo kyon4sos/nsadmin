@@ -3,6 +3,7 @@ package org.nekostudio.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.nekostudio.common.JsonResult;
 import org.nekostudio.dto.AppUserDto;
@@ -42,6 +43,7 @@ public class UserController {
         List<AppUser> appUsers = userService.list(new QueryWrapper<AppUser>().eq("phone", phone));
         return JsonResult.ok(appUsers);
     }
+    @ApiOperation("根据Id获取用户角色")
     @GetMapping(value = "user/{uid}/role")
     public JsonResult getRoleByUid(@PathVariable long uid) {
         List<UserRole> userRoles = userRoleService.list(new QueryWrapper<UserRole>().lambda().eq(UserRole::getUserId, uid));
@@ -52,6 +54,7 @@ public class UserController {
         }
         return JsonResult.ok(Collections.emptyList());
     }
+    @ApiOperation("获取用户分页")
     @GetMapping(value = "users",params = {"page_size","current"})
     public JsonResult getAll(@RequestParam("page_size") long size,@RequestParam("current") long current) {
         Page<AppUser> page = new Page<>(current,size);
@@ -59,12 +62,13 @@ public class UserController {
         return JsonResult.ok(users);
     }
 
+    @ApiOperation("根据用户名获取用户")
     @GetMapping("/user/{username}")
     public JsonResult get(@PathVariable("username") String username) {
         AppUser appUser = userService.findByUsername(username);
         return JsonResult.ok(appUser);
     }
-
+    @ApiOperation("根据ID更新用户")
     @PutMapping("/user/{id}")
     public JsonResult updateUser(@Validated @RequestBody AppUserDto user) {
         AppUser appUser = userService.updateUser(user);
@@ -73,7 +77,7 @@ public class UserController {
         }
         return  JsonResult.fail();
     }
-
+    @ApiOperation("新增用户")
     @PostMapping("/user")
     public JsonResult addUser(@RequestBody AppUserDto userDto) {
         AppUser appUser = new AppUser();
@@ -84,7 +88,7 @@ public class UserController {
         }
         return JsonResult.fail();
     }
-
+    @ApiOperation("根据id逻辑删除用户")
     @DeleteMapping("/user/{uId}")
     public JsonResult delUser(@PathVariable long uId) {
          userService.loginDelete(uId);

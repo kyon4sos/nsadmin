@@ -59,7 +59,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**", "/js/**", "/index.html", "/img/**", "/fonts/**", "/favicon.ico", "/verifyCode");
+        web.ignoring().antMatchers("/css/**",
+                "/js/**",
+                "/index.html",
+                "/img/**",
+                "/fonts/**",
+                "/favicon.ico",
+                "/verifyCode",
+                "/swagger/**",
+                "/swagger-ui.html",
+                "/v2/**",
+                "/swagger-resources/**",
+                "/webjars/springfox-swagger-ui/**"
+                );
     }
 
     @Override
